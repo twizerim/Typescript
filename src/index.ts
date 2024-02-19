@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-// import router from "./routers/index";
+import router from "./router";
 
 
 dotenv.config();
@@ -10,7 +10,7 @@ dotenv.config();
 const andela = express();
 
 andela.use(bodyParser.json());
-// andela.use("/Jant", router);
+andela.use("/Jant", router);
 
 const portas = parseInt(process.env.PORT || "3000", 10);
 const db = process.env.DATABASE || "mongodb+srv://gedeonprogrammer:programmer12@cluster0.8sikbdc.mongodb.net/Andela-poltifolio";
